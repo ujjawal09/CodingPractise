@@ -1,0 +1,34 @@
+
+
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int n=31;
+		
+		System.out.println(solve(n));
+	}
+    static int solve(int N){
+   
+    BigInteger t_result=new BigInteger(String.valueOf(N));
+    BigInteger ten=new BigInteger("10");
+    BigInteger zero=new BigInteger("0");
+    int sum=0;
+   
+     while( t_result.intValue()!=0)
+     {
+      sum+=(t_result.mod(ten)).intValue();
+      System.out.println((t_result.mod(ten)).intValue());
+      t_result=t_result.divide(ten);
+      if(t_result.intValue()==0 && sum>=10)
+      {
+        t_result=new BigInteger(String.valueOf(sum));
+        sum=0;
+       }
+      }
+     return (int)sum;
+    }
+    
+    }
