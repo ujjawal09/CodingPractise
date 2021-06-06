@@ -1,4 +1,4 @@
-//Find Longest Substring without repeatation
+//Find length of Longest Substring without repeatation
 
 import java.util.*;
 public class Main
