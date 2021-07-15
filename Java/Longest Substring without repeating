@@ -4,7 +4,8 @@ import java.util.*;
 public class Main
 {
 	public static void main(String[] args) {
-		Set<Character> hs=new HashSet<Character>();
+		 Set<Character> hs=new HashSet<Character>();
+	 StringBuilder text= new StringBuilder("");
 		int max=0;
 		String str="GeeksForGeeks";
 		for(int i=0;i<str.length();i++)
@@ -15,9 +16,17 @@ public class Main
 		    else
 		    hs.add(char1);
 		    if(max<hs.size())
-		     max=hs.size();
+		     {
+		         max=hs.size();
+		         text.setLength(0);
+		         for(char c : hs )
+		         {
+		           text.append(c);  
+		         }
+		     }
 		}
 		System.out.println(max);
+		System.out.println(text);
 		
 	}
 }
