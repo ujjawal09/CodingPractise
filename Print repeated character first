@@ -1,0 +1,61 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	 String str="ujjawal";
+	 Map<Character,Integer> map=new LinkedHashMap<Character,Integer>();
+	 for(int i=0;i<str.length();i++)
+	 {
+	    if(map.containsKey(str.charAt(i)))
+	    {
+	       // System.out.println("In");
+	        int data=map.get(str.charAt(i));
+	        data++;
+	        map.put(str.charAt(i),data);
+	    }
+	    else
+	    map.put(str.charAt(i),1);
+	 }
+	 System.out.println(map);
+	
+	 
+	 // Create a list from elements of HashMap
+        List<Map.Entry<Character, Integer> > list
+            = new LinkedList<Map.Entry<Character, Integer> >(
+                map.entrySet());
+ 
+        // Sort the list using lambda expression
+      // To sort it by Key
+        // Collections.sort(
+        //     list,
+        //     (i1,
+        //      i2) -> Character.compare(i1.getKey(),i2.getKey()));
+        
+        // To sort it by Value
+         Collections.sort(
+             list,
+             (i1,
+              i2) -> (i2.getValue()-i1.getValue()));
+        
+ 
+     // put data from sorted list to hashmap
+     //Linked Hashmap is used to maintain the order of insertion
+        HashMap<Character, Integer> temp
+            = new LinkedHashMap<Character, Integer>();
+        for (Map.Entry<Character, Integer> aa : list) {
+            temp.put(aa.getKey(), aa.getValue());
+        }
+	 
+	 Iterator itr=temp.entrySet().iterator();
+	 
+	 //map.stream().sorted((x,y)=>{x.getValue()-y.getValue()}).collect(Collectors.)
+	 
+	 
+	 while(itr.hasNext()){
+	     Map.Entry mapEntry = (Map.Entry)itr.next();
+	     System.out.print(mapEntry.getKey());
+	 }
+	
+
+}
+}
