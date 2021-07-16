@@ -16,13 +16,13 @@ public class Main
              map.put(str.charAt(i),value);
          }
     }
-    //map.entrySet().stream().sorted( (i1,i2) -> (i2.getValue()-i1.getValue())).forEach(x->System.out.print(x.getKey()));
-    Set<Map.Entry<Character,Integer>> set=map.entrySet();
+    map.entrySet().stream().sorted( (i1,i2) -> (i2.getValue()-i1.getValue())).forEach(x->System.out.print(x.getKey()));
+  /*  Set<Map.Entry<Character,Integer>> set=map.entrySet();
     Iterator itr=set.iterator();
     while(itr.hasNext()){
         Map.Entry mapEntry=(Map.Entry)itr.next();
         System.out.print(mapEntry.getKey());
-    }
+    }*/
 	}
     
 }
